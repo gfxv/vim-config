@@ -4,7 +4,7 @@ local lsp = require('lsp-zero')
 require('mason').setup({})
 require('mason-lspconfig').setup({
     ensure_installed = {
-	'gopls',
+	-- 'gopls',
     };
     handlers = {
         function(server_name)
