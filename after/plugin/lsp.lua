@@ -20,7 +20,7 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ['<Up>'] = cmp.mapping.select_prev_item(cmp_select),
         ['<Down>'] = cmp.mapping.select_next_item(cmp_select),
-        ['<leader><Tab>'] = cmp.mapping.confirm({ select = true }),
+        ['a<Enter>'] = cmp.mapping.confirm({ select = true }),
         ['<C-Space>'] = cmp.mapping.complete(),
 
     })
