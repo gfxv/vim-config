@@ -1,7 +1,9 @@
 local harpoon = require 'harpoon'
 
-harpoon:setup {}
+-- REQUIRED
+harpoon:setup()
 
+--[[
 -- basic telescope configuration
 local conf = require('telescope.config').values
 local function toggle_telescope(harpoon_files)
@@ -21,7 +23,7 @@ local function toggle_telescope(harpoon_files)
     })
     :find()
 end
-
+-- ]]
 -- TODO: add delete and replace window
 
 vim.keymap.set('n', '<leader>ha', function()
@@ -29,7 +31,7 @@ vim.keymap.set('n', '<leader>ha', function()
 end, { desc = '[h]arpoon [a]dd' })
 
 vim.keymap.set('n', '<leader>hw', function()
-  toggle_telescope(harpoon:list())
+  harpoon.ui:toggle_quick_menu(harpoon:list())
 end, { desc = 'Open [h]arpoon [w]indow' })
 
 vim.keymap.set('n', '<leader>1', function()
