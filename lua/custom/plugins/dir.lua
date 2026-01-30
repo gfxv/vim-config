@@ -63,6 +63,11 @@ return {
           { source = 'git_status', display_name = '   Git ' },
         },
       },
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+        },
+      },
     }
   end,
 }

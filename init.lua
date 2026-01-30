@@ -27,6 +27,8 @@ vim.keymap.set('n', '<leader>a', 'gg0VG')
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
+vim.keymap.set('n', 'M', vim.diagnostic.open_float)
+
 -- go specific thing
 vim.keymap.set('n', '<leader>ee', 'oif err != nil {<CR>}<Esc>Oreturn err<Esc>')
 
@@ -454,8 +456,9 @@ require('lazy').setup({
           settings = {
             gopls = {
               gofumpt = true,
+              buildFlags = { '-tags=integration' },
               codelenses = {
-                gc_details = false,
+                gc_details = true,
                 generate = true,
                 regenerate_cgo = true,
                 run_govulncheck = true,
@@ -489,6 +492,7 @@ require('lazy').setup({
         },
 
         ts_ls = {},
+        intelephense = {},
 
         lua_ls = {
           settings = {
@@ -501,12 +505,6 @@ require('lazy').setup({
         },
       }
 
-      -- Ensure the servers and tools above are installed
-      --  To check the current status of installed tools and/or manually install
-      --  other tools, you can run
-      --    :Mason
-      --
-      --  You can press `g?` for help in this menu.
       require('mason').setup()
 
       -- You can add other tools here that you want Mason to install
@@ -758,6 +756,7 @@ require('lazy').setup({
         'gomod',
         'gosum',
         'python',
+        'php',
 
         'bash',
         'c',
