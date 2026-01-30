@@ -17,8 +17,8 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 -- [[ CUSTOM KEYMAPS ]]
-vim.keymap.set('i', 'qq', '<Esc>')
-vim.keymap.set('v', 'qq', '<Esc>')
+vim.keymap.set('i', 'fv', '<Esc>')
+vim.keymap.set('v', 'fv', '<Esc>')
 vim.keymap.set('n', '<leader>b', vim.cmd.Ex)
 vim.keymap.set('x', '<leader>p', '"_dP')
 vim.keymap.set('n', '<leader>a', 'gg0VG')
